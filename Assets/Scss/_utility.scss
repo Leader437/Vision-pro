@@ -1,0 +1,19 @@
+.sec-container {
+  padding-inline: 5%;
+  padding-block: 2rem;
+  max-width: 1150px;
+}
+
+// Flex
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex($justify: space-between, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}

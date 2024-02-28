@@ -1,0 +1,99 @@
+:root {
+  font-size: 10px;
+}
+
+/*==============
+===Typography===
+==============*/
+
+/*----- Font Sizes ----*/
+$global-line-height: 1.5 !default;      // 24px
+$fs-3xl: clamp(5.6rem, 6vw, 7rem);      // 56px
+$fs-2xl: clamp(4.2rem, 4.5vw, 5.5rem);  // 42px
+$fs-xl: clamp(3.2rem, 3.5vw, 4rem);     // 32px
+$fs-l: clamp(2.4rem, 2.7vw, 3.2rem);    // 24px
+$fs-m: clamp(2rem, 2.2vw, 2.5rem);      // 20px
+$fs-s: clamp(1.6rem, 1.8vw, 2rem);      // 16px
+$fs-vs: clamp(1.4rem, 1.6vw, 1.8rem);   // 14px
+$fs-vvs: clamp(1.2rem, 1.4vw, 1.6rem);  // 12px
+
+/*---- Font Family ----*/
+$font-families: (
+  "Inter": "Inter", sans-serif,
+);
+@function family($family-name) {
+  @return map-get($font-families, $family-name);
+}
+
+/*---- Font Weight ----*/
+$font-weights: (
+  "regular": 400,
+  "medium": 600,
+  "bold": 700,
+  "bolder": 900,
+);
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
+/*============
+===Spacings===
+============*/
+
+/*---- Margins ----*/
+$m-1: 2.8rem;
+$m-2: 2.4rem;
+$m-3: 2rem;
+$m-4: 1.6rem;
+$m-5: 1.2rem;
+$m-6: 0.8rem;
+
+/*---- Paddings ----*/
+$p-1: 5em;
+$p-2: 4em;
+$p-3: 3em;
+$p-4: 2em;
+$p-5: 1em;
+$p-6: 0.7em;
+
+
+/*==========
+===Colors===
+==========*/
+
+:root {
+  /*---- Light-Theme ----*/
+  body.light {
+    --pri-clr: #fff;
+    --sec-clr: #fff;
+    --accent-clr: #fff;
+    --bg-pri: #fff;
+    --bg-sec: #fff;
+    --text-pri: #fff;
+    --text-sec: #fff;
+    --toggle: #fff;
+    --box-hover: #fff;
+  }
+  /*---- Dark-Theme ----*/
+  body.dark {
+    --pri-clr: #fff;
+    --sec-clr: #fff;
+    --accent-clr: #fff;
+    --bg-pri: #fff;
+    --bg-sec: #fff;
+    --text-pri: #fff;
+    --text-sec: #fff;
+    --toggle: #fff;
+    --box-hover: #fff;
+  }
+}
+
+$pri-clr: var(--pri-clr);
+$sec-clr: var(--sec-clr);
+$accent-clr: var(--accent-clr);
+$pri-bg: var(--pri-bg);
+$sec-bg: var(--sec-bg);
+$text-pri: var(--text-pri);
+$text-sec: var(--text-sec);
+$toggle: var(--toggle);
+$box-hover: var(--box-hover);
