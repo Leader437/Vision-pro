@@ -12,7 +12,7 @@ $breakpoints: (
 }
 
 @mixin medium {
-  @media (min-width: 480px) and (max-width: map-get($breakpoints, "md")) {
+  @media (max-width: map-get($breakpoints, "md")) {
     @content;
   }
 }

@@ -56,36 +56,36 @@ $p-6: 0.7em;
 ===Colors===
 ==========*/
 
-:root {
-  /*---- Light-Theme ----*/
-  body.light {
-    --pri-clr: #fff;
-    --sec-clr: #fff;
-    --accent-clr: #fff;
-    --bg-pri: #fff;
-    --bg-sec: #fff;
-    --text-pri: #fff;
-    --text-sec: #fff;
-    --toggle: #fff;
-    --box-hover: #fff;
-  }
-  /*---- Dark-Theme ----*/
-  body.dark {
-    --pri-clr: #fff;
-    --sec-clr: #fff;
-    --accent-clr: #fff;
-    --bg-pri: #fff;
-    --bg-sec: #fff;
-    --text-pri: #fff;
-    --text-sec: #fff;
-    --toggle: #fff;
-    --box-hover: #fff;
-  }
-}
+// :root {
+//   /*---- Light-Theme ----*/
+//   body.light {
+//     --pri-clr: #fff;
+//     --sec-clr: #fff;
+//     --accent-clr: #fff;
+//     --bg-pri: #fff;
+//     --bg-sec: #fff;
+//     --text-pri: #fff;
+//     --text-sec: #fff;
+//     --toggle: #fff;
+//     --box-hover: #fff;
+//   }
+//   /*---- Dark-Theme ----*/
+//   body.dark {
+//     --pri-clr: #fff;
+//     --sec-clr: #fff;
+//     --accent-clr: #fff;
+//     --bg-pri: #fff;
+//     --bg-sec: #fff;
+//     --text-pri: #fff;
+//     --text-sec: #fff;
+//     --toggle: #fff;
+//     --box-hover: #fff;
+//   }
+// }
 
-$pri-clr: var(--pri-clr);
-$sec-clr: var(--sec-clr);
-$accent-clr: var(--accent-clr);
+$white: #fff;
+$black: #1d1d1f;
+$navy: #147ce5;
 $pri-bg: var(--pri-bg);
 $sec-bg: var(--sec-bg);
 $text-pri: var(--text-pri);

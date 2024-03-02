@@ -55,8 +55,14 @@ loco();
 
 
 
+let header = document.querySelector('header');
+let nav = document.querySelector('nav');
 let arrow = document.querySelector('.arrow');
+let blurDiv = document.querySelector('.blurDiv');
+let main = document.querySelector('main');
 
 arrow.addEventListener('click', () => {
-    arrow.classList.toggle('active');
+    nav.classList.toggle('active');
+    header.classList.toggle('open');
+    blurDiv.classList.toggle('blurActive');
 });
