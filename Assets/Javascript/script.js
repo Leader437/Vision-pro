@@ -97,3 +97,59 @@ gsap.to(".home-hero",{
     },
     opacity:0
 })
+
+
+var tl1 = gsap.timeline({
+    scrollTrigger:{
+        trigger:'.page-2',
+        start:'top top',
+        scrub:true,
+        scroller:'main',
+        pin:true
+    },
+})
+.to ('.page-2>.p-1', {
+    top: '-30%'
+})
+.to ('.page-2>.p-2', {
+    bottom: '130%'
+})
+.to ('.page-2>video', {
+    filter: 'blur(4px) grayscale(60%)',
+})
+
+
+var tl2 = gsap.timeline({
+    scrollTrigger:{
+        trigger:'.page-3',
+        start:'top top',
+        scrub:1,
+        scroller:'main',
+        pin:true
+    }
+})
+.to ('.page-3 > .p-1', {
+    top: '-30%'
+})
+.to ('.page-3 > .p-2', {
+    bottom: '130%'
+})
+.to ('.page-3>video', {
+    filter: 'blur(4px) grayscale(60%)',
+})
+
+var tl3 = gsap.timeline({
+    scrollTrigger:{
+        trigger:'.page-4',
+        start:'top top',
+        scrub:1,
+        scroller:'main',
+        pin:true
+    }
+})
+.to ('.page-4 > p', {
+    top: '-30%'
+})
+.to ('.page-4>video', {
+    filter: 'blur(4px) grayscale(60%)',
+})
