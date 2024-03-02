@@ -20,6 +20,13 @@ module.exports = merge(common, {
                     'css-loader',        // 2. Css to Js
                     'sass-loader'        // 1. Sass to Css
                 ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',      // 2. JS injected into DOM
+                    'css-loader',        // 1. Css to Js
+                ]
             }
         ]
     }

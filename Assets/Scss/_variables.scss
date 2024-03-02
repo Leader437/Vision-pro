@@ -18,12 +18,7 @@ $fs-vs: clamp(1.4rem, 1.6vw, 1.8rem);   // 14px
 $fs-vvs: clamp(1.2rem, 1.4vw, 1.6rem);  // 12px
 
 /*---- Font Family ----*/
-$font-families: (
-  "Inter": "Inter", sans-serif,
-);
-@function family($family-name) {
-  @return map-get($font-families, $family-name);
-}
+$inter: "Inter", sans-serif;
 
 /*---- Font Weight ----*/
 $font-weights: (

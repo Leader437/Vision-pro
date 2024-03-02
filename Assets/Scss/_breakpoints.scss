@@ -6,25 +6,25 @@ $breakpoints: (
 );
 
 @mixin small {
-  @media (min-width: map-get($breakpoints, "sm")) {
+  @media (max-width: map-get($breakpoints, "sm")) {
     @content;
   }
 }
 
 @mixin medium {
-  @media (min-width: map-get($breakpoints, "md")) {
+  @media (min-width: 480px) and (max-width: map-get($breakpoints, "md")) {
     @content;
   }
 }
 
 @mixin large {
-  @media (min-width: map-get($breakpoints, "lg")) {
+  @media (min-width: 720px) and (max-width: map-get($breakpoints, "lg")) {
     @content;
   }
 }
 
 @mixin xLarge {
-  @media (min-width: map-get($breakpoints, "xl")) {
+  @media (min-width: 1200px) and (max-width: map-get($breakpoints, "xl")) {
     @content;
   }
 }
