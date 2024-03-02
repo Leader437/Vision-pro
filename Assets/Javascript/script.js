@@ -18,12 +18,9 @@ gsap.registerPlugin(ScrollTrigger);
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import LocomotiveScroll from 'locomotive-scroll';
 
-const scroll = new LocomotiveScroll({
-    // Configuration options
-});
-
 /* Making Locomotive + ScrollTrigger work */
 let loco = () => {
+
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector("main"),
         smooth: true
@@ -45,7 +42,7 @@ let loco = () => {
 
     // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-    ScrollTrigger.defaults({ scroller: "main" });
+    // ScrollTrigger.defaults({ scroller: "main" });
     // --- SETUP END ---
 
     // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
@@ -66,3 +63,37 @@ arrow.addEventListener('click', () => {
     header.classList.toggle('open');
     blurDiv.classList.toggle('blurActive');
 });
+
+
+gsap.to('.page-1>video', {
+    scrollTrigger: {
+        trigger: '.page-1',
+        start: '2% top',
+        end: 'bottom top',
+        scroller: 'main'
+    },
+    onStart:()=> {
+        document.querySelector('.home-vid').play();
+    }
+})
+
+gsap.to(".page-1",{
+    scrollTrigger:{
+        trigger:'.page-1',
+        start:'top top',
+        end:'bottom top',
+        scroller:'main',
+        pin:true
+    }
+})
+
+gsap.to(".home-hero",{
+    scrollTrigger:{
+        trigger: '.home-hero',
+        start:'2% top',
+        end:'10% bottom',
+        scroller:'main',
+        scrub:.5,
+    },
+    opacity:0
+})
