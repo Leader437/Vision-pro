@@ -1,6 +1,6 @@
 /* Boxicons */
-// import 'boxicons';
-// import 'boxicons/css/boxicons.min.css';
+import 'boxicons';
+import 'boxicons/css/boxicons.min.css';
 
 /* Scss File */
 import '../Scss/main.scss';
@@ -27,6 +27,11 @@ let loco = () => {
     });
     // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
     locoScroll.on("scroll", ScrollTrigger.update);
+
+    // changing colors of header based on height of window
+    locoScroll.on("scroll", (e) => {
+    header.classList.toggle('reverse', e.scroll.y > 1100);
+    });
 
     // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
     ScrollTrigger.scrollerProxy("main", {
@@ -63,6 +68,12 @@ arrow.addEventListener('click', () => {
     header.classList.toggle('open');
     blurDiv.classList.toggle('blurActive');
 });
+
+
+
+
+
+
 
 
 gsap.to('.page-1>video', {
@@ -116,6 +127,9 @@ var tl1 = gsap.timeline({
 })
 .to ('.page-2>video', {
     filter: 'blur(4px) grayscale(60%)',
+    width: '98%',
+    left: '50%',
+    translateX: '-50%'
 })
 
 
@@ -136,6 +150,9 @@ var tl2 = gsap.timeline({
 })
 .to ('.page-3>video', {
     filter: 'blur(4px) grayscale(60%)',
+    width: '98%',
+    left: '50%',
+    translateX: '-50%'
 })
 
 var tl3 = gsap.timeline({
@@ -152,4 +169,26 @@ var tl3 = gsap.timeline({
 })
 .to ('.page-4>video', {
     filter: 'blur(4px) grayscale(60%)',
+    width: '98%',
+    left: '50%',
+    translateX: '-50%'
+})
+
+var tl4 = gsap.timeline({
+    scrollTrigger:{
+        trigger:'.page-6',
+        start:'top top',
+        scrub:1,
+        scroller:'main',
+        pin:true
+    }
+})
+.to ('.page-6 > p', {
+    top: '-30%'
+})
+.to ('.page-6>video', {
+    filter: 'blur(4px) grayscale(60%)',
+    width: '98%',
+    left: '50%',
+    translateX: '-50%'
 })

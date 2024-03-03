@@ -17,7 +17,6 @@ header {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(20px);
   margin: 0 auto;
-  padding: $p-4 $p-3;
   transition: background-color 0.3s;
   transition-delay: 0.3s;
 
@@ -28,6 +27,7 @@ header {
 
   nav {
     @include flex();
+    padding: $p-5 $p-3;
 
     .nav-logo {
       a {
@@ -203,6 +203,58 @@ header {
       }
     }
   }
+
+  &.reverse {
+    background-color: rgba(255, 255, 255, 0.7);
+
+    &.open {
+      background-color: $white;
+    }
+    nav {
+      .nav-logo {
+        a {
+          color: $black;
+        }
+      }
+      ul {
+        li {
+          a {
+            color: $black;
+          }
+        }
+      }
+      .arrow {
+        .line-1 {
+          background-color: $black;
+        }
+        .line-2 {
+          background-color: $black;
+        }
+      }
+      .nav-btns {
+        button:nth-child(1) {
+          border: 1px solid $black;
+          color: $black;
+
+          &:hover {
+            background-color: $black;
+            color: rgba(255, 255, 255, 0.699);
+          }
+        }
+      }
+    }
+
+    @include medium {
+      nav {
+        ul {
+          background-color: $white;
+          li {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+  }
 }
 
 .blurDiv {
@@ -240,6 +292,7 @@ main {
     video {
       position: absolute;
       height: 100%;
+      margin: 0 auto;
       object-fit: cover;
     }
     .home-hero {
@@ -275,6 +328,7 @@ main {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      filter: grayscale(10%) brightness(90%) contrast(90%);
     }
     p {
       position: absolute;
@@ -307,6 +361,7 @@ main {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      filter: grayscale(10%) brightness(90%) contrast(90%);
     }
     p {
       position: absolute;
@@ -339,6 +394,7 @@ main {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      filter: grayscale(10%) brightness(90%) contrast(90%);
     }
     p {
       position: absolute;
@@ -353,8 +409,151 @@ main {
     }
   }
   .page-5 {
+    @include flex(space-between, center, column);
+    width: 100vw;
+    background-color: $white;
+    padding-block: 8em;
+
+    .logo-container {
+      width: calc(30rem + 10vw);
+      img {
+        width: 100%;
+      }
+    }
+    .btn-container {
+      @include flex(center, center, column);
+      gap: $m-6;
+      margin-top: 5em;
+
+      a {
+        @include flex();
+        gap: 0.25em;
+        color: $orange;
+        font-size: $fs-m;
+        font-weight: weight("medium");
+
+        i {
+          font-size: 1.15em;
+          transform: translateY(0.06em);
+        }
+
+        &:hover span {
+          text-decoration: underline;
+        }
+      }
+    }
+    .img-container {
+      width: 80%;
+
+      img {
+        width: 100%;
+      }
+    }
+    button {
+      margin-top: 3em;
+      font-size: $fs-s;
+      font-weight: weight("medium");
+      color: $black;
+      @include flex();
+      gap: 0.2em;
+      border: 2px solid $black;
+      padding: $p-6 $p-5;
+      border-radius: 2.5rem;
+      transition: background-color 0.2s, color 0.2s;
+
+      i {
+        font-size: 1.3em;
+      }
+      &:hover {
+        background-color: $black;
+        color: $white;
+      }
+    }
+
+    @include xLarge {
+      .logo-container {
+        width: calc(21rem + 5vw);
+      }
+      .img-container {
+        width: 70%;
+      }
+    }
+    @include small {
+      .logo-container {
+        width: calc(22rem + 5vw);
+      }
+      .img-container {
+        width: 90%;
+        margin-top: 2rem;
+      }
+    }
+  }
+  .page-6 {
+    position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: yellow;
+    overflow-y: hidden;
+
+    video {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      filter: grayscale(10%) brightness(90%) contrast(90%);
+    }
+    p {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 90%;
+      transform: translate(-50%, -50%);
+      font-size: $fs-l;
+      text-align: center;
+      color: $white;
+      font-weight: weight("bold");
+    }
+  }
+  .page-7 {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(244, 238, 238);
+    @include flex(center, center, column);
+    gap: $m-5;
+
+    h5 {
+      font-size: $fs-m;
+      color: $black;
+      font-weight: weight('bold');
+      text-align: center;
+    }
+    h1 {
+      font-size: $fs-3xl;
+      color: $black;
+      font-weight: weight('bold');
+      text-align: center;
+    }
+    p {
+      font-size: $fs-s;
+      font-weight: weight('bold');
+      color: $light-white;
+      width: 60%;
+      margin-top: 2em;
+      text-align: center;
+    }
+
+    @include medium {
+      h1 {
+        font-size: $fs-2xl;
+      }
+      p {
+        font-size: $fs-s;
+        width: 70%;
+      }
+    }
+    @include small {
+      p {
+        width: 90%;
+      }
+    }
   }
 }

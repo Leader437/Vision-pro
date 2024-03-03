@@ -18,13 +18,13 @@ $breakpoints: (
 }
 
 @mixin large {
-  @media (min-width: 720px) and (max-width: map-get($breakpoints, "lg")) {
+  @media (max-width: map-get($breakpoints, "lg")) {
     @content;
   }
 }
 
 @mixin xLarge {
-  @media (min-width: 1200px) and (max-width: map-get($breakpoints, "xl")) {
+  @media (max-width: map-get($breakpoints, "xl")) {
     @content;
   }
 }
