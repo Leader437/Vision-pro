@@ -350,6 +350,77 @@ main {
       }
     }
   }
+  .page-2-desc {
+    @include flex(space-between, start, row);
+    gap: 10em;
+    margin-block: 8rem;
+    background-color: $white;
+    width: 100%;
+
+    div:first-child {
+      width: 40%;
+
+      h2 {
+        font-size: $fs-l;
+        color: $black;
+        font-weight: weight("bold");
+      }
+    }
+    div:last-child {
+      width: 60%;
+      font-size: clamp(1.7rem, 1.9vw, 2.2rem);
+
+      p {
+        font-weight: weight("medium");
+        color: $light-white;
+        line-height: 1.4;
+      }
+      button {
+        @include flexCenter;
+        background-color: $orange;
+        padding: $p-5 $p-4;
+        border-radius: 3rem;
+        color: $white;
+        font-size: 0.8em;
+        font-weight: weight("medium");
+        margin-top: 4rem;
+        transition: background-color 0.2s;
+
+        i {
+          font-size: 1.5em;
+          margin-right: 0.3em;
+        }
+        &:hover {
+          background-color: darken($orange, 2%);
+        }
+      }
+    }
+
+    @include medium {
+      flex-direction: column;
+      gap: 3rem;
+      align-items: center;
+
+      div:first-child {
+        width: 80%;
+
+        h2 {
+          text-align: center;
+        }
+      }
+      div:last-child {
+        width: 80%;
+
+        p {
+          text-align: center;
+        }
+        button {
+          margin-inline: auto;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
   .page-3 {
     position: relative;
     width: 100vw;
@@ -516,25 +587,25 @@ main {
   .page-7 {
     width: 100vw;
     min-height: 100vh;
-    background-color: rgb(244, 238, 238);
+    background-color: $grey-bg;
     @include flex(center, center, column);
     gap: $m-5;
 
     h5 {
       font-size: $fs-m;
       color: $black;
-      font-weight: weight('bold');
+      font-weight: weight("bold");
       text-align: center;
     }
     h1 {
       font-size: $fs-3xl;
       color: $black;
-      font-weight: weight('bold');
+      font-weight: weight("bold");
       text-align: center;
     }
     p {
       font-size: $fs-s;
-      font-weight: weight('bold');
+      font-weight: weight("bold");
       color: $light-white;
       width: 60%;
       margin-top: 2em;
@@ -553,6 +624,89 @@ main {
     @include small {
       p {
         width: 90%;
+      }
+    }
+  }
+  .page-8 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: $grey-bg;
+
+    canvas {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      z-index: 9;
+    }
+
+    @include large {
+      canvas {
+        width: 90%;
+        transform: translateX(20rem);
+      }
+    }
+    @include medium {
+      canvas {
+        transform: translateX(15rem);
+      }
+    }
+    @include breakpoint(380px) {
+      canvas {
+        transform: translateX(12rem);
+      }
+    }
+  }
+
+  .text {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding-inline: 5%;
+    background-color: $grey-bg;
+
+    h1 {
+      position: relative;
+      font-size: $fs-vs;
+      font-weight: weight("regular");
+      color: $black;
+      width: 25%;
+      z-index: 99;
+
+      span {
+        font-weight: weight("medium");
+      }
+    }
+
+    &:nth-child(odd) {
+      h1 {
+        margin-left: auto;
+      }
+    }
+
+    @include large {
+      &:nth-child(odd) {
+        h1 {
+          margin-left: 0;
+        }
+      }
+      h1 {
+        width: 35%;
+      }
+    }
+    @include medium {
+      h1 {
+        width: 40%;
+      }
+    }
+    @include small {
+      h1 {
+        width: 45%;
+      }
+    }
+    @include breakpoint(360px) {
+      h1 {
+        width: 55%;
       }
     }
   }
