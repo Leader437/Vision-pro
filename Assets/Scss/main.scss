@@ -710,4 +710,123 @@ main {
       }
     }
   }
+  .page-9 {
+    background-color: $white;
+    padding-block: 5rem;
+
+    div {
+      @include flex;
+
+      img:first-child {
+        width: 49%;
+      }
+      img:last-child {
+        width: 49%;
+      }
+    }
+    video {
+      width: 100%;
+      margin-top: 1.9vw;
+    }
+
+    @include small {
+      div {
+        flex-direction: column;
+
+        img:first-child {
+          width: 100%;
+          margin-bottom: 1.9vw;
+        }
+        img:last-child {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .page-10 {
+    background-color: $white;
+
+    p {
+      font-size: $fs-s;
+      font-weight: weight("medium");
+      color: $light-white;
+      width: 60%;
+      margin-block: 5em;
+      margin-inline: auto;
+      text-align: center;
+
+      span {
+        color: $black;
+      }
+    }
+
+    @include medium {
+      p {
+        width: 80%;
+        text-align: start;
+      }
+    }
+    @include small {
+      p {
+        width: 95%;
+      }
+    }
+  }
+  .page-11 {
+    background-color: $white;
+    position: relative;
+    margin-block: 5rem;
+
+    div {
+      width: 100%;
+      margin: 0 auto;
+      background-color: red;
+
+      img {
+        width: 100%;
+        scale: (1.02);
+      }
+    }
+    button {
+      position: absolute;
+      left: 50%;
+      bottom: 7%;
+      transform: translateX(-50%);
+      @include flexCenter;
+      background-color: $orange;
+      padding: $p-5 $p-4;
+      border-radius: 3rem;
+      color: $white;
+      font-size: $fs-vs;
+      white-space: nowrap;
+      font-weight: weight("medium");
+      transition: background-color 0.2s;
+
+      i {
+        font-size: 1.5em;
+        margin-right: 0.3em;
+      }
+      &:hover {
+        background-color: darken($orange, 2%);
+      }
+    }
+
+    @include small {
+      div {
+        width: 100%;
+
+        img {
+          width: 100%;
+          scale: (1.4);
+        }
+      }
+    }
+    @include breakpoint(360px) {
+      div {
+        img {
+          scale: (1.6);
+        }
+      }
+    }
+  }
 }
