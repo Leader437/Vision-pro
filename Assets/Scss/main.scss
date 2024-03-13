@@ -902,30 +902,237 @@ main {
   .page-13 {
     position: relative;
     width: 100vw;
-    height: 100vh;
     background-color: $dark-black;
-    background-color: yellowgreen;
+    padding-block: 4vw;
 
-    canvas {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
+    div {
+      width: 70%;
+      margin: 0 auto;
+      padding-block: 10rem;
+
+      img {
+        width: 100%;
+      }
     }
 
     @include large {
-      canvas {
-        width: 90%;
-        transform: translateX(20rem);
+      div {
+        width: 75%;
       }
     }
     @include medium {
-      canvas {
-        transform: translateX(15rem);
+      padding-block: 0;
+      div {
+        width: 85%;
       }
     }
-    @include breakpoint(380px) {
-      canvas {
-        transform: translateX(12rem);
+    @include small {
+      div {
+        width: 95%;
+      }
+    }
+  }
+  .page-14 {
+    background-color: $dark-black;
+
+    h5 {
+      font-size: $fs-m;
+      color: $white;
+      font-weight: weight("bold");
+      margin-inline: auto;
+      text-align: center;
+    }
+    p {
+      font-size: $fs-s;
+      font-weight: weight("medium");
+      color: $light-white;
+      width: 60%;
+      padding-block: 1.5em;
+      margin-inline: auto;
+      text-align: center;
+
+      span {
+        color: $white;
+      }
+    }
+
+    @include large {
+      h5,
+      p {
+        width: 70%;
+      }
+    }
+    @include medium {
+      h5,
+      p {
+        text-align: start;
+        width: 80%;
+      }
+    }
+    @include small {
+      h5,
+      p {
+        width: 90%;
+      }
+    }
+  }
+  .page-15 {
+    position: relative;
+    background-color: $dark-black;
+    width: 100vw;
+
+    video {
+      width: 100%;
+      margin-top: 8rem;
+    }
+    h5 {
+      font-size: $fs-m;
+      color: $white;
+      font-weight: weight("bold");
+      margin-inline: auto 15vw;
+      width: 30%;
+      transform: translateY(-20rem);
+    }
+    p {
+      font-size: $fs-s;
+      font-weight: weight("medium");
+      color: $light-white;
+      width: 30%;
+      padding-block: 1.5em;
+      margin-inline: auto 15vw;
+      transform: translateY(-20rem);
+
+      span {
+        color: $white;
+      }
+    }
+
+    @include large {
+      h5,
+      p {
+        width: 35%;
+        margin-inline: auto 12vw;
+        transform: translateY(-15rem);
+      }
+    }
+    @include medium {
+      h5,
+      p {
+        margin-inline: auto auto;
+        width: 65%;
+        transform: translateY(-7rem);
+      }
+    }
+    @include small {
+      h5,
+      p {
+        width: 80%;
+        transform: translateY(0rem);
+      }
+      p {
+        padding-bottom: 10rem;
+      }
+    }
+  }
+  .final {
+    position: relative;
+    background-color: $dark-black;
+
+    div {
+      width: 70%;
+      margin: 0 auto;
+      padding-bottom: 10rem;
+
+      img {
+        width: 100%;
+      }
+    }
+    h5 {
+      font-size: $fs-m;
+      color: $white;
+      font-weight: weight("bold");
+      text-align: center;
+
+      margin-inline: auto;
+      width: 50%;
+    }
+    p {
+      font-size: $fs-s;
+      font-weight: weight("medium");
+      color: $light-white;
+      text-align: center;
+      width: 50%;
+      padding-block: 1.5em 8em;
+      margin-inline: auto;
+
+      span {
+        color: $white;
+      }
+    }
+
+    @include large {
+      h5,
+      p {
+        width: 55%;
+      }
+    }
+    @include medium {
+      div {
+        width: 80%;
+        padding-bottom: 7rem;
+      }
+      h5,
+      p {
+        text-align: start;
+        width: 70%;
+      }
+    }
+    @include small {
+      div {
+        width: 90%;
+        padding-bottom: 5rem;
+      }
+      h5,
+      p {
+        width: 90%;
+      }
+    }
+
+    &.page-17 {
+      padding-bottom: 10rem;
+
+      div {
+        width: 100%;
+      }
+      p {
+      padding-block: 1.5em 2em;
+      }
+      button {
+        @include flexCenter;
+        background-color: $white;
+        padding: $p-5 $p-4;
+        border-radius: 3rem;
+        color: $black;
+        font-size: $fs-vs;
+        white-space: nowrap;
+        font-weight: weight("medium");
+        margin-inline: auto;
+        transition: background-color 0.2s;
+  
+        i {
+          font-size: 1.5em;
+          margin-right: 0.3em;
+        }
+        &:hover {
+          background-color: darken($white, 2%);
+        }
+
+        @include medium {
+          margin-inline:15% auto;
+        }
+        @include small {
+          margin-inline: 5%;
+        }
       }
     }
   }
