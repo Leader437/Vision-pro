@@ -477,3 +477,36 @@ function canvas() {
     });
 }
 canvas();
+
+
+var tl3 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.page-16',
+        start: 'top 20%',
+        end: 'bottom 80%',
+        scrub: 1,
+        scroller: 'main',
+        pin: true
+    }
+})
+
+
+tl3.to(".page-16 > div > .overlay", {
+    opacity: 0
+})
+
+
+var tl4 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.page-17',
+        start: 'top 20%',
+        end: 'bottom 80%',
+        scrub: 1,
+        scroller: 'main',
+        pin: true
+    }
+})
+
+tl4.to(".page-17 > div > .overlay", {
+    opacity: 0
+})

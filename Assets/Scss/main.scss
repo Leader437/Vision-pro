@@ -27,7 +27,7 @@ header {
 
   nav {
     @include flex();
-    padding: $p-5 $p-3;
+    padding: $p-6 $p-3;
 
     .nav-logo {
       a {
@@ -139,7 +139,6 @@ header {
         overflow: visible;
       }
       ul {
-        // display: none;
         position: absolute;
         top: -100%;
         left: 0;
@@ -282,6 +281,10 @@ main {
   position: relative;
   overflow: hidden;
 
+  &.dark {
+    background-color: $dark-black;
+  }
+
   .page-1 {
     position: relative;
     width: 100vw;
@@ -296,7 +299,6 @@ main {
       object-fit: cover;
     }
     .home-hero {
-      background-image: yellowgreen;
       position: absolute;
       left: 50%;
       top: 70%;
@@ -339,14 +341,35 @@ main {
       font-weight: weight("bold");
 
       &.p-1 {
-        font-size: $fs-l;
+        font-size: $fs-2xl;
         width: 90%;
         top: 50%;
       }
       &.p-2 {
-        font-size: $fs-l;
+        font-size: $fs-2xl;
         width: 70%;
         bottom: -50%;
+      }
+    }
+
+    @include xLarge {
+      p {
+        &.p-1 {
+          font-size: $fs-xl;
+        }
+        &.p-2 {
+          font-size: $fs-xl;
+        }
+      }
+    }
+    @include small {
+      p {
+        &.p-1 {
+          font-size: $fs-l;
+        }
+        &.p-2 {
+          font-size: $fs-l;
+        }
       }
     }
   }
@@ -443,14 +466,38 @@ main {
       font-weight: weight("bold");
 
       &.p-1 {
-        font-size: $fs-l;
-        width: 90%;
+        font-size: $fs-2xl;
+        width: 75%;
         top: 50%;
       }
       &.p-2 {
-        font-size: $fs-l;
-        width: 70%;
+        font-size: $fs-2xl;
+        width: 75%;
         bottom: -40%;
+      }
+    }
+    @include xLarge {
+      p {
+        &.p-1 {
+          font-size: $fs-xl;
+          width: 60%;
+        }
+        &.p-2 {
+          font-size: $fs-xl;
+          width: 60%;
+        }
+      }
+    }
+    @include small {
+      p {
+        &.p-1 {
+          font-size: $fs-l;
+          width: 90%;
+        }
+        &.p-2 {
+          font-size: $fs-l;
+          width: 90%;
+        }
       }
     }
   }
@@ -473,10 +520,21 @@ main {
       top: 50%;
       width: 90%;
       transform: translate(-50%, -50%);
-      font-size: $fs-l;
+      font-size: $fs-2xl;
       text-align: center;
       color: $white;
       font-weight: weight("bold");
+    }
+
+    @include xLarge {
+      p {
+        font-size: $fs-xl;
+      }
+    }
+    @include small {
+      p {
+        font-size: $fs-l;
+      }
     }
   }
   .page-5 {
@@ -578,10 +636,23 @@ main {
       top: 50%;
       width: 90%;
       transform: translate(-50%, -50%);
-      font-size: $fs-l;
+      font-size: $fs-2xl;
       text-align: center;
       color: $white;
       font-weight: weight("bold");
+    }
+
+    @include xLarge {
+      p {
+        width: 60%;
+        font-size: $fs-xl;
+      }
+    }
+    @include small {
+      p {
+        font-size: $fs-l;
+        width: 70%;
+      }
     }
   }
   .page-7 {
@@ -651,6 +722,16 @@ main {
         transform: translateX(15rem);
       }
     }
+    @include breakpoint(540px) {
+      canvas {
+        height: 120%;
+      }
+    }
+    @include small {
+      canvas {
+        height: 130%;
+      }
+    }
     @include breakpoint(380px) {
       canvas {
         transform: translateX(12rem);
@@ -711,8 +792,10 @@ main {
     }
   }
   .page-9 {
+    position: relative;
     background-color: $white;
     padding-block: 5rem;
+    z-index: 10;
 
     div {
       @include flex;
@@ -744,7 +827,9 @@ main {
     }
   }
   .page-10 {
+    position: relative;
     background-color: $white;
+    z-index: 11;
 
     p {
       font-size: $fs-s;
@@ -829,309 +914,322 @@ main {
       }
     }
   }
-  .page-12 {
-    width: 100vw;
-    min-height: 100vh;
+  .black-bottom {
     background-color: $dark-black;
 
-    div {
-      @include flex(center, center, column);
-      gap: $m-5;
-      padding-top: 15rem;
+    .page-12 {
+      width: 100vw;
+      min-height: 100vh;
+      background-color: $dark-black;
+
+      div {
+        @include flex(center, center, column);
+        gap: $m-5;
+        padding-top: 15rem;
+
+        h5 {
+          font-size: $fs-m;
+          color: $white;
+          font-weight: weight("bold");
+          text-align: center;
+        }
+        h1 {
+          font-size: $fs-3xl;
+          color: $white;
+          font-weight: weight("bold");
+          text-align: center;
+          max-width: 70%;
+        }
+        p {
+          font-size: $fs-s;
+          font-weight: weight("bold");
+          color: $light-white;
+          width: 60%;
+          margin-top: 2em;
+          text-align: center;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+
+      @include large {
+        div {
+          h1 {
+            max-width: 80%;
+          }
+          p {
+            width: 80%;
+          }
+        }
+      }
+      @include medium {
+        div {
+          h1 {
+            font-size: $fs-2xl;
+            max-width: 80%;
+          }
+          p {
+            font-size: $fs-s;
+            width: 80%;
+          }
+        }
+      }
+      @include small {
+        div {
+          h1 {
+            width: 100%;
+          }
+          p {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .page-13 {
+      position: relative;
+      width: 100vw;
+      background-color: $dark-black;
+      padding-block: 4vw;
+
+      div {
+        width: 70%;
+        margin: 0 auto;
+        padding-block: 10rem;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      @include large {
+        div {
+          width: 75%;
+        }
+      }
+      @include medium {
+        padding-block: 0;
+        div {
+          width: 85%;
+        }
+      }
+      @include small {
+        div {
+          width: 95%;
+        }
+      }
+    }
+    .page-14 {
+      background-color: $dark-black;
 
       h5 {
         font-size: $fs-m;
         color: $white;
         font-weight: weight("bold");
+        margin-inline: auto;
         text-align: center;
-      }
-      h1 {
-        font-size: $fs-3xl;
-        color: $white;
-        font-weight: weight("bold");
-        text-align: center;
-        max-width: 70%;
       }
       p {
         font-size: $fs-s;
-        font-weight: weight("bold");
+        font-weight: weight("medium");
         color: $light-white;
         width: 60%;
-        margin-top: 2em;
+        padding-block: 1.5em;
+        margin-inline: auto;
         text-align: center;
 
         span {
           color: $white;
         }
       }
-    }
 
-    @include large {
-      div {
-        h1 {
-          max-width: 80%;
-        }
+      @include large {
+        h5,
         p {
+          width: 70%;
+        }
+      }
+      @include medium {
+        h5,
+        p {
+          text-align: start;
           width: 80%;
         }
       }
-    }
-    @include medium {
-      div {
-        h1 {
-          font-size: $fs-2xl;
-          max-width: 80%;
-        }
+      @include small {
+        h5,
         p {
-          font-size: $fs-s;
-          width: 80%;
+          width: 90%;
         }
       }
     }
-    @include small {
-      div {
-        h1 {
-          width: 100%;
-        }
-        p {
-          width: 100%;
-        }
-      }
-    }
-  }
-  .page-13 {
-    position: relative;
-    width: 100vw;
-    background-color: $dark-black;
-    padding-block: 4vw;
+    .page-15 {
+      position: relative;
+      background-color: $dark-black;
+      width: 100vw;
 
-    div {
-      width: 70%;
-      margin: 0 auto;
-      padding-block: 10rem;
-
-      img {
+      video {
         width: 100%;
+        margin-top: 8rem;
       }
-    }
-
-    @include large {
-      div {
-        width: 75%;
-      }
-    }
-    @include medium {
-      padding-block: 0;
-      div {
-        width: 85%;
-      }
-    }
-    @include small {
-      div {
-        width: 95%;
-      }
-    }
-  }
-  .page-14 {
-    background-color: $dark-black;
-
-    h5 {
-      font-size: $fs-m;
-      color: $white;
-      font-weight: weight("bold");
-      margin-inline: auto;
-      text-align: center;
-    }
-    p {
-      font-size: $fs-s;
-      font-weight: weight("medium");
-      color: $light-white;
-      width: 60%;
-      padding-block: 1.5em;
-      margin-inline: auto;
-      text-align: center;
-
-      span {
+      h5 {
+        font-size: $fs-m;
         color: $white;
-      }
-    }
-
-    @include large {
-      h5,
-      p {
-        width: 70%;
-      }
-    }
-    @include medium {
-      h5,
-      p {
-        text-align: start;
-        width: 80%;
-      }
-    }
-    @include small {
-      h5,
-      p {
-        width: 90%;
-      }
-    }
-  }
-  .page-15 {
-    position: relative;
-    background-color: $dark-black;
-    width: 100vw;
-
-    video {
-      width: 100%;
-      margin-top: 8rem;
-    }
-    h5 {
-      font-size: $fs-m;
-      color: $white;
-      font-weight: weight("bold");
-      margin-inline: auto 15vw;
-      width: 30%;
-      transform: translateY(-20rem);
-    }
-    p {
-      font-size: $fs-s;
-      font-weight: weight("medium");
-      color: $light-white;
-      width: 30%;
-      padding-block: 1.5em;
-      margin-inline: auto 15vw;
-      transform: translateY(-20rem);
-
-      span {
-        color: $white;
-      }
-    }
-
-    @include large {
-      h5,
-      p {
-        width: 35%;
-        margin-inline: auto 12vw;
-        transform: translateY(-15rem);
-      }
-    }
-    @include medium {
-      h5,
-      p {
-        margin-inline: auto auto;
-        width: 65%;
-        transform: translateY(-7rem);
-      }
-    }
-    @include small {
-      h5,
-      p {
-        width: 80%;
-        transform: translateY(0rem);
+        font-weight: weight("bold");
+        margin-inline: auto 15vw;
+        width: 30%;
+        transform: translateY(-20rem);
       }
       p {
-        padding-bottom: 10rem;
-      }
-    }
-  }
-  .final {
-    position: relative;
-    background-color: $dark-black;
-
-    div {
-      width: 70%;
-      margin: 0 auto;
-      padding-bottom: 10rem;
-
-      img {
-        width: 100%;
-      }
-    }
-    h5 {
-      font-size: $fs-m;
-      color: $white;
-      font-weight: weight("bold");
-      text-align: center;
-
-      margin-inline: auto;
-      width: 50%;
-    }
-    p {
-      font-size: $fs-s;
-      font-weight: weight("medium");
-      color: $light-white;
-      text-align: center;
-      width: 50%;
-      padding-block: 1.5em 8em;
-      margin-inline: auto;
-
-      span {
-        color: $white;
-      }
-    }
-
-    @include large {
-      h5,
-      p {
-        width: 55%;
-      }
-    }
-    @include medium {
-      div {
-        width: 80%;
-        padding-bottom: 7rem;
-      }
-      h5,
-      p {
-        text-align: start;
-        width: 70%;
-      }
-    }
-    @include small {
-      div {
-        width: 90%;
-        padding-bottom: 5rem;
-      }
-      h5,
-      p {
-        width: 90%;
-      }
-    }
-
-    &.page-17 {
-      padding-bottom: 10rem;
-
-      div {
-        width: 100%;
-      }
-      p {
-      padding-block: 1.5em 2em;
-      }
-      button {
-        @include flexCenter;
-        background-color: $white;
-        padding: $p-5 $p-4;
-        border-radius: 3rem;
-        color: $black;
-        font-size: $fs-vs;
-        white-space: nowrap;
+        font-size: $fs-s;
         font-weight: weight("medium");
-        margin-inline: auto;
-        transition: background-color 0.2s;
-  
-        i {
-          font-size: 1.5em;
-          margin-right: 0.3em;
-        }
-        &:hover {
-          background-color: darken($white, 2%);
-        }
+        color: $light-white;
+        width: 30%;
+        padding-block: 1.5em;
+        margin-inline: auto 15vw;
+        transform: translateY(-20rem);
 
-        @include medium {
-          margin-inline:15% auto;
+        span {
+          color: $white;
         }
-        @include small {
-          margin-inline: 5%;
+      }
+
+      @include large {
+        h5,
+        p {
+          width: 35%;
+          margin-inline: auto 12vw;
+          transform: translateY(-15rem);
+        }
+      }
+      @include medium {
+        h5,
+        p {
+          margin-inline: auto auto;
+          width: 65%;
+          transform: translateY(-7rem);
+        }
+      }
+      @include small {
+        h5,
+        p {
+          width: 80%;
+          transform: translateY(0rem);
+        }
+        p {
+          padding-bottom: 10rem;
+        }
+      }
+    }
+    .final {
+      position: relative;
+      background-color: $dark-black;
+
+      div {
+        position: relative;
+        width: 68%;
+        margin: 0 auto;
+        padding-bottom: 10rem;
+
+        img {
+          width: 100%;
+
+          &:nth-child(2) {
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
+      h5 {
+        font-size: $fs-m;
+        color: $white;
+        font-weight: weight("bold");
+        text-align: center;
+
+        margin-inline: auto;
+        width: 50%;
+      }
+      p {
+        font-size: $fs-s;
+        font-weight: weight("medium");
+        color: $light-white;
+        text-align: center;
+        width: 50%;
+        padding-block: 1.5em 8em;
+        margin-inline: auto;
+
+        span {
+          color: $white;
+        }
+      }
+
+      @include large {
+        div {
+          width: 80%;
+        }
+        h5,
+        p {
+          width: 55%;
+        }
+      }
+      @include medium {
+        div {
+          width: 70%;
+          padding-bottom: 7rem;
+        }
+        h5,
+        p {
+          text-align: start;
+          width: 70%;
+        }
+      }
+      @include small {
+        div {
+          width: 90%;
+          padding-bottom: 5rem;
+        }
+        h5,
+        p {
+          width: 90%;
+        }
+      }
+
+      &.page-18 {
+        padding-bottom: 10rem;
+
+        div {
+          width: 100%;
+        }
+        p {
+          padding-block: 1.5em 2em;
+        }
+        button {
+          @include flexCenter;
+          background-color: $white;
+          padding: $p-5 $p-4;
+          border-radius: 3rem;
+          color: $black;
+          font-size: $fs-vs;
+          white-space: nowrap;
+          font-weight: weight("medium");
+          margin-inline: auto;
+          transition: background-color 0.2s;
+
+          i {
+            font-size: 1.5em;
+            margin-right: 0.3em;
+          }
+          &:hover {
+            background-color: darken($white, 2%);
+          }
+
+          @include medium {
+            margin-inline: 15% auto;
+          }
+          @include small {
+            margin-inline: 5%;
+          }
         }
       }
     }
